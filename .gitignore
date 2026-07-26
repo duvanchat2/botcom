@@ -1,0 +1,19 @@
+# Secretos y dependencias — NUNCA commitear
+.env
+.env.local
+**/.env
+node_modules/
+scripts/node_modules/
+
+# Backups
+*.bak
+*.bak.*
+*.orig
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Notas internas de trabajo (no van al repo)
+PENDIENTES-siguiente-sesion.txt
+MANUAL-Agente-Sofia-NaturalSmith.txt
