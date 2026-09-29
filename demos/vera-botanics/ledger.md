@@ -54,3 +54,5 @@
 403 seg3 El origen 8s (ext 402)      8d2624bb-4be7-4555-b1cf-6dfb1736cb3d
     403 checked: joins 2 (gold field), root > red berry > crystal; leaf not seen at sampled frames
 404 seg4 La descomposición 7s (ext 403) f5e37cfd-e0bb-4188-8d12-bc5e2b328e57
+    404 checked: joins 3 (crystal), crystal -> dust -> winding stream, bg lifts to bronze, ends diagonal stream
+405 seg5 La fusión 8s (ext 404)      fbf3145f-355a-4b9c-987d-5e173fd6ea56
