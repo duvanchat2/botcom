@@ -52,3 +52,5 @@
 401 seg1 El sello 6s (omni_reference) 2408ddeb-9af7-4c0b-9304-9c76f6865b21  approved by user
 402 seg2 La apertura 6s (ext 401)    7f0937a5-6f44-4da2-946a-37fd5cfc5ad4  checked: joins 1, text crisp
 403 seg3 El origen 8s (ext 402)      8d2624bb-4be7-4555-b1cf-6dfb1736cb3d
+    403 checked: joins 2 (gold field), root > red berry > crystal; leaf not seen at sampled frames
+404 seg4 La descomposición 7s (ext 403) f5e37cfd-e0bb-4188-8d12-bc5e2b328e57
