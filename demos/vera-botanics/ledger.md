@@ -46,3 +46,9 @@
 # analyses: S5b e4f860af (OK: continuous pan tray->glass, hand carries glass to window table)
 # S6b a14399e6 done. FINAL CHAIN: S1 5662c3f0 > S2 3893e164 > S3 91762b48 > S4b 0ce33350 > S5b 3804e3e0 > S6b a14399e6
 # discarded: S4 fe5b66d1 (hidden cut), S5 79afee56 (dissolve start). Credits this brief: 3581.7 -> 2919.7 (662)
+
+# DOYPACK JOURNEY (brief 3) — reference upload fea3df2a-cbc6-49d3-b97c-3efef6b84fa8
+400 start frame (nano_banana_pro)   f8937374-d238-4b85-8dd2-f9cd408a5d33
+401 seg1 El sello 6s (omni_reference) 2408ddeb-9af7-4c0b-9304-9c76f6865b21  approved by user
+402 seg2 La apertura 6s (ext 401)    7f0937a5-6f44-4da2-946a-37fd5cfc5ad4  checked: joins 1, text crisp
+403 seg3 El origen 8s (ext 402)      8d2624bb-4be7-4555-b1cf-6dfb1736cb3d
