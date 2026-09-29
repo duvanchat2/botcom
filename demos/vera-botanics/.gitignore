@@ -1,0 +1,9 @@
+fonts/
+raw/
+frames/
+frames_tmp/
+assets/
+master/
+dist/
+qa/
+cfg.json
