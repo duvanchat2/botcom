@@ -55,4 +55,5 @@
     403 checked: joins 2 (gold field), root > red berry > crystal; leaf not seen at sampled frames
 404 seg4 La descomposición 7s (ext 403) f5e37cfd-e0bb-4188-8d12-bc5e2b328e57
     404 checked: joins 3 (crystal), crystal -> dust -> winding stream, bg lifts to bronze, ends diagonal stream
-405 seg5 La fusión 8s (ext 404)      fbf3145f-355a-4b9c-987d-5e173fd6ea56
+405 seg5 La fusión 8s (ext 404)      fbf3145f-355a-4b9c-987d-5e173fd6ea56   ok: une con 4, sin corte oculto; aparece un vaso de agua (objeto cotidiano, revisar)
+406 seg6 La forma 7s (ext 405)        37615609-964c-42a1-af2d-eddcf7ab8972
