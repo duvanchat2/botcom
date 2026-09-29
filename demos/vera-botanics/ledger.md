@@ -57,4 +57,13 @@
     404 checked: joins 3 (crystal), crystal -> dust -> winding stream, bg lifts to bronze, ends diagonal stream
 405 seg5 La fusión 8s (ext 404)      fbf3145f-355a-4b9c-987d-5e173fd6ea56   ok: une con 4, sin corte oculto; aparece un vaso de agua (objeto cotidiano, revisar)
 406 seg6 La forma 7s (ext 405)        37615609-964c-42a1-af2d-eddcf7ab8972   ok: une con 5, sin corte; el salto en f137-144 es la cámara rompiendo la superficie
-407 seg7 El regreso 6s (ext 406 + ref fea3df2a) d10e1059-7192-4481-bcf3-df970f7d1e87
+407 seg7 El regreso 6s (ext 406 + ref fea3df2a) d10e1059-7192-4481-bcf3-df970f7d1e87   ok: une con 6, sin cortes; envase final igual a la referencia (salvia mate, crema, hoja bronce), centrado y quieto
+
+Revisión final doypack (7 segmentos, master 48 s 1080p 24 fps, sin recortes en las uniones):
+- Uniones (diferencia media último→primer fotograma, escala 0-255): 1→2 5.7, 2→3 8.1, 3→4 1.0, 4→5 0.7, 5→6 2.2, 6→7 2.2. Todas continuas.
+- seg3: CORTE OCULTO en f155-156 (t≈6.5 s): la cámara empuja hasta llenar el cuadro con la baya y salta al cristal. Otra pasada:
+  puente omni_reference start=seg3 f150, end=seg3 f160, 2-3 s, y empalmar seg3[0:150] + puente + seg3[160:]. No obliga a rehacer 4-7.
+  (hoja→baya en f117-119 es un paso de primer plano por delante de la cámara, continuo.)
+- seg5: aparece un vaso de agua (objeto cotidiano, fuera de las reglas). Sin corte. Rehacerlo obliga a rehacer 6 y 7.
+- seg6: salto en f137-144 = la cámara rompiendo la superficie; continuo.
+- seg1, 2, 4, 7: sin problemas.
