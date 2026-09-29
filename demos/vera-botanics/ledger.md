@@ -56,4 +56,5 @@
 404 seg4 La descomposición 7s (ext 403) f5e37cfd-e0bb-4188-8d12-bc5e2b328e57
     404 checked: joins 3 (crystal), crystal -> dust -> winding stream, bg lifts to bronze, ends diagonal stream
 405 seg5 La fusión 8s (ext 404)      fbf3145f-355a-4b9c-987d-5e173fd6ea56   ok: une con 4, sin corte oculto; aparece un vaso de agua (objeto cotidiano, revisar)
-406 seg6 La forma 7s (ext 405)        37615609-964c-42a1-af2d-eddcf7ab8972
+406 seg6 La forma 7s (ext 405)        37615609-964c-42a1-af2d-eddcf7ab8972   ok: une con 5, sin corte; el salto en f137-144 es la cámara rompiendo la superficie
+407 seg7 El regreso 6s (ext 406 + ref fea3df2a) d10e1059-7192-4481-bcf3-df970f7d1e87
