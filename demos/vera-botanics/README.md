@@ -10,7 +10,7 @@ No forma parte del agente de WhatsApp; vive aquí solo para no perder el pipelin
 ## Estado
 
 - Artefacto publicado: https://claude.ai/artifact/3yWfBsS6HKFqoLEVBLxduW
-- Hoy corre en **modo storyboard**: el entorno de la sesión no pudo descargar los archivos de
+- Publicado con el recorrido real (263 fotogramas, 8,2 MB) desde el 29-09-2026.
   Higgsfield (`d8j0ntlcm91z4.cloudfront.net` bloqueado por la política de red), así que el
   recorrido muestra un estudio de luz rotulado como provisional y las imágenes salen como
   marcos "pendiente de descarga".
