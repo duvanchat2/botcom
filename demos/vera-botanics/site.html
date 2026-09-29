@@ -1,0 +1,1210 @@
+<title>Vera Botanics</title>
+<meta name="description" content="Vera Botanics: colágeno con probióticos, jengibre y menta. Concepto de marca ficticio con compra de demostración.">
+<script>(function(){var d=document.documentElement;d.lang='es';d.classList.add('js');try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('rm')}catch(e){}})();</script>
+<style>
+@font-face{font-family:"Albert Sans";font-style:normal;font-weight:300 600;font-display:swap;src:url(data:font/woff2;base64,{{FONT_ALBERT}}) format("woff2")}
+@font-face{font-family:"Ibarra Real Nova";font-style:normal;font-weight:400 700;font-display:swap;src:url(data:font/woff2;base64,{{FONT_IBARRA}}) format("woff2")}
+@font-face{font-family:"Ibarra Real Nova";font-style:italic;font-weight:400;font-display:swap;src:url(data:font/woff2;base64,{{FONT_IBARRA_I}}) format("woff2")}
+
+/* Layout: un solo plano secuencia fijado al scroll (la mañana en una cocina) y, después,
+   un pliego editorial: producto, fórmula, rutina, dudas, compra y sistema de marca. */
+:root{
+  --bg:#F3EEE4; --bg-rgb:243,238,228;          /* crema */
+  --bg-2:#E9E2D5;                              /* lino */
+  --surface:#FBF8F2; --surface-rgb:251,248,242;
+  --ink:#262C25; --ink-2:#5A6253;
+  --sage:#8E9E83; --sage-deep:#55664E;         /* salvia */
+  --terra:#A95F42; --terra-rgb:169,95,66;      /* terracota (acción) */
+  --terra-soft:#C98B6C;                        /* terracota suave (acento) */
+  --bronze:#8A7152; --bronze-ink:#6E5A40;      /* bronce apagado */
+  --on-accent:#FBF8F2;
+  --line:rgba(38,44,37,.14); --line-strong:rgba(38,44,37,.32);
+  --on-media:#FBF8F2; --scrim-rgb:22,24,20;
+  /* brand swatches: fixed brand values shown in the style board */
+  --sw-crema:#F3EEE4; --sw-lino:#E9E2D5; --sw-salvia:#8E9E83; --sw-terra:#C98B6C; --sw-bronce:#8A7152; --sw-tinta:#262C25;
+  --sw-dark-text:#262C25; --sw-light-text:#FBF8F2;
+  --display:"Ibarra Real Nova","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --text:"Albert Sans","Avenir Next","Segoe UI",Roboto,system-ui,sans-serif;
+  --gutter:clamp(16px,4.5vw,64px);
+  --maxw:1320px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121510; --bg-rgb:18,21,16; --bg-2:#1A1F18; --surface:#1F251D; --surface-rgb:31,37,29;
+  --ink:#ECE5D6; --ink-2:#ADB2A2; --sage:#9FB293; --sage-deep:#BACBAC;
+  --terra:#D89272; --terra-rgb:216,146,114; --terra-soft:#D89A7B; --bronze:#C3A37C; --bronze-ink:#D2B58F; --on-accent:#121510;
+  --line:rgba(236,229,214,.14); --line-strong:rgba(236,229,214,.34); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121510; --bg-rgb:18,21,16; --bg-2:#1A1F18; --surface:#1F251D; --surface-rgb:31,37,29;
+  --ink:#ECE5D6; --ink-2:#ADB2A2; --sage:#9FB293; --sage-deep:#BACBAC;
+  --terra:#D89272; --terra-rgb:216,146,114; --terra-soft:#D89A7B; --bronze:#C3A37C; --bronze-ink:#D2B58F; --on-accent:#121510;
+  --line:rgba(236,229,214,.14); --line-strong:rgba(236,229,214,.34); color-scheme:dark}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+img,canvas{display:block;max-width:100%}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+::selection{background:var(--sage);color:var(--bg)}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-80px;z-index:100;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:4px;text-decoration:none}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.ph{color:var(--bronze-ink);background:rgba(var(--terra-rgb),.08);border-bottom:1px dashed var(--bronze);padding:0 .25em;border-radius:2px;white-space:normal}
+
+/* type scale: .72 / .95 / 1.0625 / 1.2 / 1.9 / 4.4 / 6.4 rem */
+.eyebrow{margin:0;font:600 .72rem/1.3 var(--text);letter-spacing:.2em;text-transform:uppercase;color:var(--sage-deep)}
+.display{margin:0;font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+.display em{font-style:italic;letter-spacing:-.01em}
+.h2{font-size:clamp(2.2rem,1.3rem + 3.4vw,4.4rem)}
+.h2 em{color:var(--sage-deep)}
+.h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.45rem,1.15rem + .9vw,1.9rem);line-height:1.12;letter-spacing:-.01em}
+.lede{margin:0;font-size:clamp(1.05rem,1rem + .25vw,1.2rem);line-height:1.55;color:var(--ink-2);max-width:42ch;text-wrap:pretty}
+
+/* ---------- wordmark ---------- */
+.wm{color:inherit;text-decoration:none}
+.wm--line{display:inline-flex;align-items:center;gap:.75rem;white-space:nowrap}
+.wm--line .wm__vera{font:400 1.32rem/1 var(--display);letter-spacing:.24em;margin-right:-.24em}
+.wm--line .wm__rule{width:1px;height:1.05rem;background:var(--bronze)}
+.wm--line .wm__bot{font:500 .6rem/1 var(--text);letter-spacing:.42em;margin-right:-.42em}
+.wm--stack{display:inline-grid;row-gap:.2em;justify-items:stretch;line-height:1}
+.wm--stack .wm__vera{font:400 1em/.8 var(--display);letter-spacing:.16em;margin-right:-.16em;text-align:center}
+.wm--stack .wm__rule{height:1px;background:var(--bronze);opacity:.7;margin-block:.12em}
+.wm--stack .wm__bot{display:flex;justify-content:space-between;font:500 max(.19em,9px)/1 var(--text);padding-inline:.04em}
+.wm--stack .wm__bot i{font-style:normal}
+
+/* ---------- controls ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;padding:.9rem 1.4rem;border:0;border-radius:999px;background:var(--terra);color:var(--on-accent);font:500 .95rem/1 var(--text);letter-spacing:.01em;text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px -14px rgba(var(--terra-rgb),.8)}
+.btn:active{transform:none}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-strong)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1px var(--ink)}
+.textlink{display:inline-flex;align-items:center;gap:.5em;padding-block:.55em;font:500 .95rem/1 var(--text);text-decoration:none;border-bottom:1px solid currentColor;cursor:pointer}
+.textlink svg{width:13px;height:13px;flex:none}
+
+/* ---------- entrance animations (content is visible without JS) ---------- */
+.js:not(.rm) [data-reveal]{opacity:0;transform:translate3d(0,22px,0);transition:opacity 1s var(--ease),transform 1.15s var(--ease);transition-delay:var(--d,0ms)}
+.js:not(.rm) [data-reveal].is-in{opacity:1;transform:none}
+.js:not(.rm) [data-split] .sw{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .14em 0;margin:0 -.08em -.14em 0}
+.js:not(.rm) [data-split] .sw>span{display:inline-block;transform:translate3d(0,112%,0);transition:transform 1.2s var(--ease);transition-delay:calc(var(--i,0) * 50ms + var(--d,0ms))}
+.js:not(.rm) [data-split].is-in .sw>span{transform:none}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;padding-top:env(safe-area-inset-top,0px);color:var(--ink);background:linear-gradient(to bottom,rgba(var(--bg-rgb),.8),rgba(var(--bg-rgb),0))}
+.nav::before{content:"";position:absolute;inset:0;background:rgba(var(--bg-rgb),.88);-webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);box-shadow:0 1px 0 var(--line);opacity:0;transition:opacity .5s var(--ease)}
+.nav.is-solid::before{opacity:1}
+.nav__in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px var(--gutter)}
+.nav__links{display:flex;gap:clamp(18px,2.4vw,36px);list-style:none;margin:0;padding:0;font-size:.9rem}
+.nav__links a{text-decoration:none;opacity:.78;transition:opacity .3s}
+.nav__links a:hover{opacity:1}
+.nav__cta{min-height:40px;padding:.7rem 1.1rem;font-size:.86rem}
+@media (max-width:900px){.nav__links{display:none}}
+@media (max-width:400px){.nav .wm--line .wm__rule,.nav .wm--line .wm__bot{display:none}}
+
+/* ---------- 1 · el recorrido (canvas fijado) ---------- */
+.journey{position:relative;height:1100vh}
+.journey__stage{position:sticky;top:0;height:100vh;height:100lvh;overflow:hidden;background:var(--bg-2)}
+.journey__poster,.journey__film{position:absolute;inset:0;width:100%;height:100%}
+.journey__poster{object-fit:cover;object-position:var(--fx,50%) 50%;filter:blur(10px);transform:scale(1.05);transition:opacity .9s var(--ease)}
+.journey__poster.is-gone{opacity:0}
+.journey__film{opacity:0;transition:opacity .6s var(--ease)}
+.journey__film.is-on{opacity:1}
+.grain{position:absolute;inset:-6%;pointer-events:none;background-image:url(data:image/png;base64,{{GRAIN}});background-size:128px 128px;opacity:.42}
+@media (hover:hover) and (pointer:fine){html:not(.rm) .grain{animation:grain 1s steps(4) infinite}}
+@keyframes grain{0%{transform:translate3d(0,0,0)}25%{transform:translate3d(-3%,2%,0)}50%{transform:translate3d(2%,-3%,0)}75%{transform:translate3d(-2%,-1%,0)}100%{transform:translate3d(0,0,0)}}
+.scrim{position:absolute;inset:0;pointer-events:none;opacity:0}
+.scrim--l{background:linear-gradient(90deg,rgba(var(--bg-rgb),.92) 0%,rgba(var(--bg-rgb),.66) 30%,rgba(var(--bg-rgb),0) 60%)}
+.scrim--r{background:linear-gradient(270deg,rgba(var(--bg-rgb),.92) 0%,rgba(var(--bg-rgb),.66) 30%,rgba(var(--bg-rgb),0) 60%)}
+.scrim--t{opacity:1;background:linear-gradient(180deg,rgba(var(--bg-rgb),.55) 0%,rgba(var(--bg-rgb),0) 16%)}
+.journey__ui{position:absolute;left:0;right:0;top:0;height:100vh;height:100svh;pointer-events:none}
+.ch{position:absolute;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:18px;width:min(36rem,calc(100% - 2 * var(--gutter)));padding-block:96px;opacity:0;will-change:opacity,transform}
+.ch.is-live{pointer-events:auto}
+.ch--l{left:var(--gutter)}
+.ch--r{right:var(--gutter)}
+.ch--hero{width:min(42rem,calc(100% - 2 * var(--gutter)))}
+.ch__k{color:var(--bronze-ink)}
+.ch__h1{font-size:clamp(2.6rem,1.2rem + 4.4vw,5.6rem);line-height:.98;max-width:12ch}
+.ch__h2{font-size:clamp(2.1rem,1.2rem + 2.9vw,3.9rem);line-height:1.02;max-width:14ch}
+.ch__h1 em,.ch__h2 em{color:var(--sage-deep)}
+.ch p{margin:0}
+.ch__txt{font-size:clamp(1.02rem,.98rem + .3vw,1.18rem);line-height:1.55;color:var(--ink-2);max-width:34ch}
+.ch__ctas{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:6px}
+.ch__note{font-size:.8rem;color:var(--ink-2)}
+.hero-wm{align-self:flex-start;font-size:clamp(2.6rem,1.6rem + 3vw,4.6rem);margin-bottom:10px;color:var(--ink)}
+.ch__list{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:0;max-width:26rem}
+.ch__list li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:1rem}
+.ch__list li span:last-child{color:var(--bronze-ink);font-weight:500}
+.jrail{position:absolute;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;gap:4px;pointer-events:auto;margin:0;padding:6px;list-style:none;border-radius:999px;background:rgba(var(--bg-rgb),.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px var(--line)}
+.jrail button{position:relative;border:0;background:none;cursor:pointer;padding:8px 12px;border-radius:999px;font:600 .62rem/1 var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);transition:color .4s,background-color .4s}
+.jrail button:hover{color:var(--ink)}
+.jrail button.is-on{color:var(--ink);background:rgba(var(--surface-rgb),.9)}
+.jrail button i{position:absolute;left:12px;right:12px;bottom:3px;height:1px;background:var(--terra);transform-origin:left;transform:scaleX(0)}
+.jskip{position:absolute;left:var(--gutter);bottom:calc(30px + env(safe-area-inset-bottom,0px));pointer-events:auto;font-size:.85rem}
+.loader{position:absolute;left:50%;bottom:calc(82px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:grid;gap:8px;justify-items:center;padding:12px 18px;border-radius:12px;background:rgba(var(--bg-rgb),.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:500 .78rem/1 var(--text);letter-spacing:.06em;color:var(--ink-2);transition:opacity .6s var(--ease)}
+.loader span{display:block;width:140px;height:2px;background:var(--line);overflow:hidden;border-radius:2px}
+.loader i{display:block;height:100%;background:var(--terra);transform-origin:left;transform:scaleX(0);transition:transform .3s linear}
+.loader.is-done{opacity:0;pointer-events:none}
+.jbar{display:none}
+.jcap{display:none;position:absolute;right:var(--gutter);bottom:calc(84px + env(safe-area-inset-bottom,0px));max-width:22rem;margin:0;padding:12px 14px;border-radius:8px;background:rgba(var(--surface-rgb),.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px var(--line);font-size:.8rem;line-height:1.45;color:var(--ink-2)}
+.jcap b{color:var(--ink);font-weight:600}
+.jcap__why{display:block;margin-top:6px;color:var(--bronze-ink)}
+.is-board .jcap{display:block}
+@media (max-width:760px){
+  .jcap{left:var(--gutter);right:var(--gutter);max-width:none;top:calc(112px + env(safe-area-inset-top,0px));bottom:auto;font-size:.74rem;padding:9px 11px}
+  .jcap__why{display:none}
+  .ch,.ch--hero{left:var(--gutter);right:var(--gutter);width:auto;justify-content:flex-end;padding:0 0 calc(92px + env(safe-area-inset-bottom,0px))}
+  .ch__h1{font-size:clamp(2.35rem,10vw,3.6rem)}
+  .ch__h2{font-size:clamp(1.9rem,8.4vw,2.8rem)}
+  .hero-wm{font-size:clamp(2.2rem,11vw,3rem)}
+  .scrim--l,.scrim--r{background:linear-gradient(0deg,rgba(var(--bg-rgb),.95) 0%,rgba(var(--bg-rgb),.78) 30%,rgba(var(--bg-rgb),0) 62%)}
+  .jrail{display:none}
+  .jbar{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;position:absolute;left:var(--gutter);right:var(--gutter);top:calc(66px + env(safe-area-inset-top,0px))}
+  .jbar span{height:2px;background:var(--line-strong);border-radius:2px;overflow:hidden}
+  .jbar i{display:block;height:100%;background:var(--terra);transform-origin:left;transform:scaleX(0)}
+  .jskip{top:calc(78px + env(safe-area-inset-top,0px));bottom:auto;right:var(--gutter);left:auto;font-size:.8rem}
+  .loader{bottom:auto;top:calc(116px + env(safe-area-inset-top,0px))}
+}
+/* without JS the journey reads as a simple stack */
+html:not(.js) .journey{height:auto}
+html:not(.js) .journey__stage{position:relative;height:auto;overflow:visible;padding:88px 0 40px}
+html:not(.js) .journey__poster{position:relative;height:56vh;filter:none;transform:none}
+html:not(.js) .journey__film,html:not(.js) .scrim,html:not(.js) .jrail,html:not(.js) .loader,html:not(.js) .jbar{display:none}
+html:not(.js) .journey__ui{position:relative;height:auto;display:grid;gap:48px;padding:40px var(--gutter)}
+html:not(.js) .ch{position:relative;opacity:1;width:auto;padding:0;left:auto;right:auto}
+
+/* ---------- 2 · producto ---------- */
+.product{padding-block:clamp(110px,13vw,200px) clamp(90px,10vw,150px)}
+.product__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,7vw,120px);align-items:start}
+.product__media{position:sticky;top:calc(88px + env(safe-area-inset-top,0px));margin:0;aspect-ratio:4/5;max-width:100%;overflow:hidden;border-radius:3px;background:var(--bg-2)}
+.product__media img{width:100%;height:100%;object-fit:cover}
+.product__body{display:grid;gap:26px;min-width:0}
+.specs{margin:6px 0 0;display:grid;gap:0}
+.specs div{display:grid;grid-template-columns:minmax(7.5rem,.36fr) minmax(0,1fr);gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+.specs div:last-child{border-bottom:1px solid var(--line)}
+.specs dt{font:600 .72rem/1.6 var(--text);letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-ink)}
+.specs dd{margin:0;color:var(--ink-2)}
+.specs dd strong{color:var(--ink);font-weight:500}
+.product__cta{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center}
+@media (max-width:880px){.product__grid{grid-template-columns:minmax(0,1fr)}.product__media{position:relative;top:0;max-height:70vh}.specs div{grid-template-columns:minmax(0,1fr);gap:6px}}
+
+/* ---------- 3 · ingredientes ---------- */
+.ingredients{background:var(--bg-2);padding-block:clamp(110px,13vw,200px)}
+.sec-head{display:grid;gap:22px;max-width:760px;margin-bottom:clamp(56px,8vw,110px)}
+.ing-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.2vw,36px);align-items:start}
+.ing:nth-child(2n){margin-top:clamp(36px,6vw,100px)}
+.ing__fig{margin:0;display:grid;gap:18px}
+.ing__img{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;border-radius:2px;background:var(--bg)}
+.ing__img img{position:absolute;left:0;top:-6%;width:100%;height:112%;object-fit:cover;will-change:transform}
+.ing figcaption{display:grid;gap:8px}
+.ing__amt{margin:0;font:600 .74rem/1 var(--text);letter-spacing:.16em;text-transform:uppercase;color:var(--bronze-ink)}
+.ing__txt{margin:0;color:var(--ink-2);font-size:.97rem;max-width:34ch}
+.ing-foot{margin:clamp(40px,6vw,72px) 0 0;font-size:.9rem;color:var(--ink-2);max-width:60ch}
+@media (max-width:1020px){.ing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ing-grid{grid-template-columns:minmax(0,1fr);gap:56px}.ing:nth-child(2n){margin-top:0}}
+
+/* ---------- 4 · el ritual (timeline) ---------- */
+.routine{padding-block:clamp(120px,14vw,220px)}
+.routine__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(48px,8vw,140px);align-items:start}
+.routine__head{position:sticky;top:24vh;display:grid;gap:22px}
+.steps-wrap{position:relative;padding-left:56px}
+.steps__track{position:absolute;left:9px;top:12px;bottom:12px;width:1px;background:var(--line)}
+.steps__track i{position:absolute;inset:0;background:var(--terra);transform-origin:top;transform:scaleY(0)}
+.steps{list-style:none;margin:0;padding:3vh 0 12vh;display:grid;gap:clamp(90px,17vh,190px)}
+.step{position:relative;display:grid;gap:12px}
+.step__dot{position:absolute;left:-56px;top:1px;width:19px;height:19px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line-strong);transition:background-color .5s,box-shadow .5s}
+.step.is-on .step__dot{background:var(--terra);box-shadow:0 0 0 6px rgba(var(--terra-rgb),.16)}
+.step__k{margin:0;font:600 .72rem/1.3 var(--text);letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-ink)}
+.step__txt{margin:0;color:var(--ink-2);max-width:40ch}
+.js:not(.rm) .step{opacity:.32;transform:translate3d(0,18px,0);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.js:not(.rm) .step.is-on{opacity:1;transform:none}
+@media (max-width:860px){.routine__grid{grid-template-columns:minmax(0,1fr)}.routine__head{position:static}.steps-wrap{padding-left:44px}.step__dot{left:-44px}}
+
+/* ---------- 5 · preguntas ---------- */
+.faq{padding-block:clamp(100px,12vw,180px);background:var(--bg-2)}
+.faq__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(40px,7vw,120px);align-items:start}
+.faq__list{display:grid;border-top:1px solid var(--line-strong)}
+.faq details{border-bottom:1px solid var(--line-strong)}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;cursor:pointer;list-style:none;font:400 clamp(1.15rem,1.05rem + .4vw,1.4rem)/1.3 var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .4s var(--ease)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq__a{margin:0;padding:0 0 24px;color:var(--ink-2);max-width:62ch}
+@media (max-width:880px){.faq__grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- 6 · compra ---------- */
+.buy-sec{padding-block:clamp(110px,13vw,200px)}
+.buy__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(36px,6vw,100px);align-items:center}
+.buy__media{margin:0;aspect-ratio:1/1;max-width:100%;overflow:hidden;border-radius:3px;background:var(--bg-2);position:relative}
+.buy__media canvas{width:100%;height:100%;object-fit:cover}
+.buy__side{display:grid;gap:22px;min-width:0}
+.buy{display:grid;gap:18px;padding:clamp(20px,2.4vw,32px);background:var(--surface);border-radius:4px;box-shadow:inset 0 0 0 1px var(--line)}
+.buy__head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.buy__name{margin:0;font:400 1.75rem/1.1 var(--display)}
+.buy__sub{margin:6px 0 0;font-size:.92rem;color:var(--ink-2)}
+.buy__price{margin:0;text-align:right;font:400 1.75rem/1 var(--display);white-space:nowrap}
+.buy__price small{display:block;margin-top:6px;font:600 .64rem/1 var(--text);letter-spacing:.2em;color:var(--ink-2)}
+.plans{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+.plan{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 16px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;transition:box-shadow .3s,background-color .3s}
+.plan.is-checked{box-shadow:inset 0 0 0 1.5px var(--ink);background:rgba(var(--bg-rgb),.55)}
+.plan input{appearance:none;-webkit-appearance:none;margin:0;width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line-strong);transition:box-shadow .3s;cursor:pointer}
+.plan input:checked{box-shadow:inset 0 0 0 5px var(--terra)}
+.plan__name{display:grid;gap:2px;font-size:.98rem;min-width:0}
+.plan__name em{font-style:normal;font-size:.82rem;color:var(--bronze-ink)}
+.plan__price{font-size:.98rem;font-weight:500}
+.buy__row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px}
+.qty{display:inline-grid;grid-template-columns:44px 40px 44px;align-items:center;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line-strong)}
+.qty button{height:48px;border:0;background:none;cursor:pointer;font-size:1.2rem;border-radius:999px}
+.qty input{width:40px;height:44px;text-align:center;border:0;background:none;padding:0;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.btn--wide{width:100%}
+.demo-note{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;margin:0;padding:12px 14px;border-radius:4px;background:rgba(var(--terra-rgb),.08);font-size:.86rem;color:var(--ink-2)}
+.demo-note svg{width:18px;height:18px;margin-top:1px;fill:none;stroke:var(--bronze-ink);stroke-width:1.5}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.92rem;color:var(--ink-2)}
+.facts li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start}
+.facts svg{width:18px;height:18px;margin-top:2px;fill:none;stroke:var(--sage-deep);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.nutri{border-top:1px solid var(--line);padding-top:14px}
+.nutri summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;list-style:none;font-weight:500}
+.nutri summary::-webkit-details-marker{display:none}
+.nutri summary svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .4s var(--ease)}
+.nutri[open] summary svg{transform:rotate(45deg)}
+.nutri__meta{margin:12px 0 0;font-size:.85rem;color:var(--ink-2)}
+.nutri table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.9rem;font-variant-numeric:tabular-nums}
+.nutri th,.nutri td{padding:8px 0;border-bottom:1px solid var(--line);font-weight:400;text-align:left;vertical-align:top}
+.nutri td{text-align:right;padding-left:16px;white-space:nowrap}
+.legal{margin:0;font-size:.8rem;line-height:1.5;color:var(--ink-2)}
+@media (max-width:900px){.buy__grid{grid-template-columns:minmax(0,1fr)}.buy__media{aspect-ratio:4/3}}
+@media (max-width:520px){.buy__row{grid-template-columns:minmax(0,1fr)}.qty{justify-self:start}}
+
+/* ---------- 7 · sistema de marca (style board) ---------- */
+.board{padding-block:clamp(100px,12vw,180px);border-top:1px solid var(--line)}
+.board__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,1.6vw,24px)}
+.tile{grid-column:span 6;padding:clamp(20px,2.6vw,36px);border-radius:4px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);display:grid;gap:18px;align-content:start;min-width:0}
+.tile__k{margin:0;font:600 .68rem/1.2 var(--text);letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-ink)}
+.tile--wm{grid-column:span 7;background:var(--sw-crema);color:var(--sw-tinta);place-items:center;min-height:280px;align-content:center;box-shadow:inset 0 0 0 1px rgba(38,44,37,.12)}
+.tile--wm .tile__k{color:#6E5A40;justify-self:start}
+.tile--wm .wm--stack{font-size:clamp(3.2rem,2rem + 4vw,5.6rem)}
+.tile--wm .wm__rule{background:var(--sw-bronce)}
+.tile--wm2{grid-column:span 5;background:var(--sw-salvia);color:var(--sw-light-text);align-content:space-between;box-shadow:none}
+.tile--wm2 .tile__k{color:var(--sw-light-text);opacity:.85}
+.tile--wm2 .wm__rule{background:var(--sw-light-text);opacity:.6}
+.tile--wm2 .wm--stack{font-size:2.6rem;justify-self:start}
+.tile--pal{grid-column:span 12}
+.swatches{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.swatch{display:grid;align-content:end;gap:4px;min-height:150px;padding:14px;border-radius:3px;font-size:.8rem}
+.swatch b{font:400 1.2rem/1.1 var(--display)}
+.swatch span{font-variant-numeric:tabular-nums;opacity:.85}
+.swatch--crema{background:var(--sw-crema);color:var(--sw-dark-text);box-shadow:inset 0 0 0 1px rgba(38,44,37,.12)}
+.swatch--lino{background:var(--sw-lino);color:var(--sw-dark-text)}
+.swatch--salvia{background:var(--sw-salvia);color:var(--sw-dark-text)}
+.swatch--terra{background:var(--sw-terra);color:var(--sw-dark-text)}
+.swatch--bronce{background:var(--sw-bronce);color:var(--sw-light-text)}
+.swatch--tinta{background:var(--sw-tinta);color:var(--sw-light-text)}
+.tile--type{grid-column:span 7}
+.spec-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:end;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.spec-row:last-child{border-bottom:0;padding-bottom:0}
+.spec-aa{font:400 4.2rem/.8 var(--display)}
+.spec-aa--sans{font:400 3.6rem/.8 var(--text)}
+.spec-name{margin:0;font-weight:500}
+.spec-use{margin:2px 0 0;font-size:.88rem;color:var(--ink-2)}
+.spec-sample{margin:0;font:italic 400 1.5rem/1.2 var(--display);color:var(--sage-deep)}
+.tile--btn{grid-column:span 5}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.tile--img{grid-column:span 12}
+.dir{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.dir figure{margin:0;display:grid;gap:10px}
+.dir canvas{width:100%;aspect-ratio:4/3;height:auto;border-radius:3px;background:var(--bg-2)}
+.dir figcaption{font-size:.86rem;color:var(--ink-2)}
+.dir figcaption b{display:block;color:var(--ink);font-weight:500}
+@media (max-width:980px){.tile,.tile--wm,.tile--wm2,.tile--type,.tile--btn{grid-column:span 12}.swatches{grid-template-columns:repeat(3,minmax(0,1fr))}.dir{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}.swatch{min-height:110px}.spec-aa{font-size:3.2rem}.spec-aa--sans{font-size:2.8rem}}
+
+/* ---------- footer + toast ---------- */
+.foot{border-top:1px solid var(--line);padding-block:64px calc(40px + env(safe-area-inset-bottom,0px));background:var(--bg-2)}
+.foot__top{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,3fr));gap:36px}
+.foot .wm--stack{font-size:2.4rem}
+.foot__intro{margin:18px 0 0;color:var(--ink-2);font-size:.95rem;max-width:34ch}
+.foot h3{margin:0 0 14px;font:600 .72rem/1.3 var(--text);letter-spacing:.18em;text-transform:uppercase;color:var(--bronze-ink)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.92rem;color:var(--ink-2)}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot__legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:.8rem;color:var(--ink-2)}
+.foot__legal p{margin:0;max-width:90ch}
+@media (max-width:900px){.foot__top{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.foot__top{grid-template-columns:minmax(0,1fr)}}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:80;width:max-content;max-width:calc(100% - 32px);padding:14px 20px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:.92rem;line-height:1.45;box-shadow:0 20px 50px -20px rgba(var(--scrim-rgb),.6);transform:translate3d(-50%,16px,0);opacity:0;transition:opacity .4s var(--ease),transform .5s var(--ease)}
+.toast.is-on{transform:translate3d(-50%,0,0);opacity:1}
+</style>
+
+<a class="skip" href="#producto">Saltar el recorrido</a>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="wm wm--line" href="#recorrido" aria-label="Vera Botanics, volver al inicio"><span class="wm__vera" aria-hidden="true">VERA</span><span class="wm__rule" aria-hidden="true"></span><span class="wm__bot" aria-hidden="true">BOTANICS</span></a>
+    <ul class="nav__links">
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#ingredientes">Ingredientes</a></li>
+      <li><a href="#ritual">Ritual</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
+    </ul>
+    <a class="btn nav__cta" href="#comprar">Empieza tu ritual</a>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- 1 · RECORRIDO -->
+  <section class="journey" id="recorrido" aria-label="Recorrido por el ritual de la mañana">
+    <div class="journey__stage" id="stage">
+      <img class="journey__poster" id="poster" src="{{POSTER}}" alt="Cocina luminosa al amanecer vista desde una ventana abierta, con el frasco de Vera Botanics sobre una isla de travertino">
+      <canvas class="journey__film" id="film" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="scrim scrim--t" aria-hidden="true"></div>
+      <div class="scrim scrim--l" id="scrimL" aria-hidden="true"></div>
+      <div class="scrim scrim--r" id="scrimR" aria-hidden="true"></div>
+      <div class="journey__ui">
+        <article class="ch ch--l ch--hero" data-ch="0" aria-labelledby="ch0-t">
+          <span class="wm wm--stack hero-wm" role="img" aria-label="Vera Botanics"><span class="wm__vera" aria-hidden="true">VERA</span><span class="wm__rule" aria-hidden="true"></span><span class="wm__bot" aria-hidden="true"><i>B</i><i>O</i><i>T</i><i>A</i><i>N</i><i>I</i><i>C</i><i>S</i></span></span>
+          <h1 class="display ch__h1" id="ch0-t">La mañana empieza con <em>un gesto</em>.</h1>
+          <p class="ch__txt">Colágeno con probióticos, jengibre y menta. Una cucharada al día, disuelta en agua.</p>
+          <div class="ch__ctas">
+            <a class="btn" href="#comprar">Empieza tu ritual</a>
+          </div>
+          <p class="ch__note">Vera Botanics es un concepto de marca ficticio. Desliza para recorrer la mañana.</p>
+        </article>
+        <article class="ch ch--r" data-ch="1" aria-labelledby="ch1-t">
+          <p class="eyebrow ch__k">01 · El gesto</p>
+          <h2 class="display ch__h2" id="ch1-t">Diez gramos. <em>Una cucharada.</em></h2>
+          <p class="ch__txt">La cuchara de madera viene dentro del frasco. No hace falta medir nada más.</p>
+        </article>
+        <article class="ch ch--l" data-ch="2" aria-labelledby="ch2-t">
+          <p class="eyebrow ch__k">02 · La disolución</p>
+          <h2 class="display ch__h2" id="ch2-t">Dale <em>treinta segundos</em>.</h2>
+          <p class="ch__txt">El polvo se abre en el agua y desaparece. Fría o tibia, sin grumos ni licuadora.</p>
+        </article>
+        <article class="ch ch--r" data-ch="3" aria-labelledby="ch3-t">
+          <p class="eyebrow ch__k">03 · Los ingredientes</p>
+          <h2 class="display ch__h2" id="ch3-t">Cuatro ingredientes, <em>a la vista</em>.</h2>
+          <ul class="ch__list">
+            <li><span>Colágeno hidrolizado</span><span class="num">9,5 g</span></li>
+            <li><span>Cultivos vivos</span><span class="num">5.000 M UFC</span></li>
+            <li><span>Raíz de jengibre</span><span class="num">150 mg</span></li>
+            <li><span>Hoja de menta</span><span class="num">50 mg</span></li>
+          </ul>
+        </article>
+        <article class="ch ch--l" data-ch="4" aria-labelledby="ch4-t">
+          <p class="eyebrow ch__k">04 · El ritual</p>
+          <h2 class="display ch__h2" id="ch4-t">El día puede esperar <em>un vaso</em>.</h2>
+          <p class="ch__txt">Siéntate junto a la ventana y tómalo despacio. Lo que cuenta es repetirlo.</p>
+        </article>
+        <article class="ch ch--l" data-ch="5" aria-labelledby="ch5-t">
+          <p class="eyebrow ch__k num">Ritual N.º 1 · 300 g · 30 porciones</p>
+          <h2 class="display ch__h2" id="ch5-t">Mañana, <em>otra vez</em>.</h2>
+          <p class="ch__txt">El frasco se queda en tu cocina, a la vista. Así es más fácil volver al gesto cada día.</p>
+          <div class="ch__ctas">
+            <a class="btn" href="#comprar">Empieza tu ritual · <span class="num">$189.000</span></a>
+            <a class="textlink" href="#producto">Conocer el producto</a>
+          </div>
+        </article>
+      </div>
+      <ol class="jrail" id="jrail" aria-label="Capítulos del recorrido">
+        <li><button type="button" data-go="0">Llegada<i></i></button></li>
+        <li><button type="button" data-go="1">Gesto<i></i></button></li>
+        <li><button type="button" data-go="2">Disolución<i></i></button></li>
+        <li><button type="button" data-go="3">Ingredientes<i></i></button></li>
+        <li><button type="button" data-go="4">Ritual<i></i></button></li>
+        <li><button type="button" data-go="5">Cocina<i></i></button></li>
+      </ol>
+      <div class="jbar" id="jbar" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div>
+      <a class="textlink jskip" href="#producto">Saltar el recorrido</a>
+      <p class="jcap" aria-live="off"><b>Storyboard provisional.</b> <span id="jcap"></span> <span class="jcap__why">El video del recorrido está generado en Higgsfield y falta incrustarlo aquí.</span></p>
+      <div class="loader" id="loader" role="status" aria-live="polite"><b id="loaderTxt">Preparando el recorrido</b><span><i id="loaderBar"></i></span></div>
+    </div>
+  </section>
+
+  <!-- 2 · PRODUCTO -->
+  <section class="product" id="producto" aria-labelledby="prod-t">
+    <div class="wrap product__grid">
+      <figure class="product__media" data-reveal><img src="{{PRODUCT}}" alt="El frasco blanco de tapa verde salvia sobre la isla de travertino, con un vaso de agua y la cuchara de madera"></figure>
+      <div class="product__body">
+        <p class="eyebrow" data-reveal>El producto</p>
+        <h2 class="display h2" id="prod-t" data-split>Ritual N.º 1: <em>colágeno con cultivos vivos</em>.</h2>
+        <p class="lede" data-reveal>Un polvo para disolver en agua, con jengibre y menta. Frasco de 300 g con 30 porciones y cuchara de madera.</p>
+        <dl class="specs" data-reveal>
+          <div><dt>Qué es</dt><dd>Un suplemento dietario en polvo. Cada porción de 10 g lleva <strong>colágeno hidrolizado, cultivos vivos, raíz de jengibre y hoja de menta</strong>. Sin azúcar añadido.</dd></div>
+          <div><dt>Para quién</dt><dd>Para adultos que quieren sumar proteína y un gesto fijo a su mañana. Lo pensamos para mujeres de 30 a 50 años que ya cuidan su rutina y la quieren más fácil de sostener.</dd></div>
+          <div><dt>Qué contiene</dt><dd><span class="num">9,5 g</span> de colágeno hidrolizado, <span class="num">5.000 millones</span> UFC de cultivos vivos, <span class="num">150 mg</span> de raíz de jengibre y <span class="num">50 mg</span> de hoja de menta por porción.</dd></div>
+          <div><dt>Cómo se toma</dt><dd>Una cucharada rasa en <span class="num">250 ml</span> de agua fría o tibia. Revuelve treinta segundos y tómalo. Una vez al día.</dd></div>
+        </dl>
+        <div class="product__cta" data-reveal>
+          <a class="btn" href="#comprar">Empieza tu ritual</a>
+          <a class="textlink" href="#ingredientes">Ver ingredientes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · INGREDIENTES -->
+  <section class="ingredients" id="ingredientes" aria-labelledby="ing-t">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Ingredientes</p>
+        <h2 class="display h2" id="ing-t" data-split>Qué hay en el frasco <em>y por qué</em>.</h2>
+        <p class="lede" data-reveal style="--d:200ms">Cuatro componentes, cada uno con una razón concreta. Sin azúcar añadido, sin colorantes y sin saborizantes artificiales.</p>
+      </header>
+      <ul class="ing-grid">
+        <li class="ing" data-reveal>
+          <figure class="ing__fig">
+            <div class="ing__img"><img src="{{ING_COLLAGEN}}" alt="Polvo de colágeno color marfil en un cuenco de cerámica sin esmaltar" decoding="async"></div>
+            <figcaption>
+              <p class="ing__amt num">9,5 g por porción</p>
+              <h3 class="h3">Colágeno hidrolizado</h3>
+              <p class="ing__txt">Proteína de origen bovino en péptidos pequeños, por eso se disuelve sin grumos. Suma proteína a tu día; no reemplaza una alimentación variada.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="ing" data-reveal style="--d:120ms">
+          <figure class="ing__fig">
+            <div class="ing__img"><img src="{{ING_PROBIOTICS}}" alt="Cultivos vivos blancos y húmedos en un cuenco de cerámica" decoding="async"></div>
+            <figcaption>
+              <p class="ing__amt num">5.000 millones UFC</p>
+              <h3 class="h3">Cultivos vivos</h3>
+              <p class="ing__txt"><i>Lactobacillus acidophilus</i> y <i>Bifidobacterium lactis</i>. Son microorganismos vivos: por eso pedimos agua fría o tibia y un lugar fresco para el frasco.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="ing" data-reveal style="--d:240ms">
+          <figure class="ing__fig">
+            <div class="ing__img"><img src="{{ING_GINGER}}" alt="Raíz de jengibre fresca con un corte que muestra su interior dorado" decoding="async"></div>
+            <figcaption>
+              <p class="ing__amt num">150 mg por porción</p>
+              <h3 class="h3">Raíz de jengibre</h3>
+              <p class="ing__txt">Está por el sabor. Da un fondo cálido y apenas picante.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="ing" data-reveal style="--d:360ms">
+          <figure class="ing__fig">
+            <div class="ing__img"><img src="{{ING_MINT}}" alt="Ramita de hierbabuena con gotas de rocío" decoding="async"></div>
+            <figcaption>
+              <p class="ing__amt num">50 mg por porción</p>
+              <h3 class="h3">Hoja de menta</h3>
+              <p class="ing__txt">También por el sabor: deja un final fresco y limpio.</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <p class="ing-foot" data-reveal>Cantidades por porción de 10 g. <span class="ph">Pendiente: ficha técnica y análisis de laboratorio del producto real.</span></p>
+    </div>
+  </section>
+
+  <!-- 4 · EL RITUAL (timeline) -->
+  <section class="routine" id="ritual" aria-labelledby="rut-t">
+    <div class="wrap routine__grid">
+      <header class="routine__head">
+        <p class="eyebrow" data-reveal>El ritual</p>
+        <h2 class="display h2" id="rut-t" data-split>Tres pasos, <em>cada mañana</em>.</h2>
+        <p class="lede" data-reveal style="--d:200ms">Un frasco rinde 30 porciones: un mes de mañanas.</p>
+      </header>
+      <div class="steps-wrap" id="stepsWrap">
+        <div class="steps__track" aria-hidden="true"><i id="stepsFill"></i></div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__dot" aria-hidden="true"></span>
+            <p class="step__k">Paso 1 · Al despertar</p>
+            <h3 class="h3">Sirve una cucharada</h3>
+            <p class="step__txt">Una cucharada rasa (10 g) en un vaso con 250 ml de agua fría o tibia.</p>
+          </li>
+          <li class="step">
+            <span class="step__dot" aria-hidden="true"></span>
+            <p class="step__k">Paso 2 · Treinta segundos</p>
+            <h3 class="h3">Revuelve y espera</h3>
+            <p class="step__txt">Revuelve hasta que se disuelva. Si prefieres, mézclalo en un batido o en un café con leche tibio.</p>
+          </li>
+          <li class="step">
+            <span class="step__dot" aria-hidden="true"></span>
+            <p class="step__k">Paso 3 · Todos los días</p>
+            <h3 class="h3">Repite mañana</h3>
+            <p class="step__txt">Elige una hora fija y deja el frasco a la vista. Un frasco son 30 mañanas.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PREGUNTAS -->
+  <section class="faq" id="preguntas" aria-labelledby="faq-t">
+    <div class="wrap faq__grid">
+      <header class="sec-head" style="margin:0">
+        <p class="eyebrow" data-reveal>Preguntas frecuentes</p>
+        <h2 class="display h2" id="faq-t" data-split>Antes de <em>comprar</em>.</h2>
+        <p class="lede" data-reveal style="--d:200ms">Lo que suele preguntarse antes del primer frasco.</p>
+      </header>
+      <div class="faq__list" data-reveal>
+        <details><summary>¿A qué sabe?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Suave. El jengibre aparece al fondo y la menta al final. No es dulce: no lleva azúcar añadido ni edulcorantes.</p></details>
+        <details><summary>¿Cómo y cuándo lo tomo?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Una cucharada rasa (10 g) en 250 ml de agua fría o tibia, una vez al día. Muchas personas lo toman al despertar; lo importante es elegir un momento y repetirlo.</p></details>
+        <details><summary>¿Puedo mezclarlo con café o bebidas calientes?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Sí, si están tibias, por debajo de unos 40 °C. El calor fuerte afecta a los cultivos vivos. También funciona en batidos y en yogur.</p></details>
+        <details><summary>¿Cuánto dura un frasco?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Trae 30 porciones de 10 g: un mes si lo tomas todos los días.</p></details>
+        <details><summary>¿Es apto para veganos? ¿Tiene alérgenos?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">No es vegano: el colágeno es de origen bovino. No lleva azúcar añadido. <span class="ph">Pendiente: declaración de alérgenos y trazas de la ficha técnica real.</span></p></details>
+        <details><summary>¿Puedo tomarlo si estoy embarazada, lactando o tomo medicamentos?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Consulta antes con tu médico. Es un suplemento dietario y no reemplaza ninguna indicación profesional.</p></details>
+        <details><summary>¿Cómo funciona la suscripción?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Recibirías un frasco cada 30 días con 15 % de descuento y podrías pausarla o cancelarla cuando quieras. En esta demo no se crea ninguna suscripción ni se cobra nada.</p></details>
+        <details><summary>¿Hacen envíos a toda Colombia?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a"><span class="ph">Pendiente: cobertura, tiempos y costo de envío reales.</span> En esta demo no se envía nada.</p></details>
+        <details><summary>¿Cómo se guarda?<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary><p class="faq__a">Bien cerrado, en un lugar fresco y seco, lejos del sol. No necesita nevera. <span class="ph">Pendiente: vida útil real después de abierto.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · COMPRA -->
+  <section class="buy-sec" id="comprar" aria-labelledby="buy-t">
+    <div class="wrap buy__grid">
+      <figure class="buy__media" data-reveal><canvas id="buyFrame" width="900" height="900" aria-hidden="true"></canvas></figure>
+      <div class="buy__side">
+        <p class="eyebrow" data-reveal>Compra</p>
+        <h2 class="display h2" id="buy-t" data-split>Empieza <em>tu ritual</em>.</h2>
+        <form class="buy" id="buy" novalidate data-reveal style="--d:160ms">
+          <div class="buy__head">
+            <div>
+              <h3 class="buy__name">Ritual N.º 1</h3>
+              <p class="buy__sub">Colágeno + probióticos · 300 g · 30 porciones</p>
+            </div>
+            <p class="buy__price num"><span id="price">$189.000</span><small>COP</small></p>
+          </div>
+          <fieldset class="plans">
+            <legend class="sr-only">Modalidad de compra</legend>
+            <label class="plan is-checked" for="plan-once">
+              <input type="radio" name="plan" id="plan-once" value="once" checked>
+              <span class="plan__name">Compra única</span>
+              <span class="plan__price num">$189.000</span>
+            </label>
+            <label class="plan" for="plan-sub">
+              <input type="radio" name="plan" id="plan-sub" value="sub">
+              <span class="plan__name">Cada 30 días <em>Ahorras 15 % · pausa o cancela cuando quieras</em></span>
+              <span class="plan__price num">$160.650</span>
+            </label>
+          </fieldset>
+          <div class="buy__row">
+            <div class="qty">
+              <button type="button" id="qty-minus" aria-label="Quitar un frasco">−</button>
+              <input id="qty" name="qty" inputmode="numeric" value="1" aria-label="Cantidad de frascos">
+              <button type="button" id="qty-plus" aria-label="Agregar un frasco">+</button>
+            </div>
+            <button class="btn btn--wide" type="submit" id="add">Empieza tu ritual · <span class="num" id="total">$189.000</span></button>
+          </div>
+          <p class="demo-note"><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7"/><path d="M9 8v5M9 5.5v.01"/></svg><span><b>Compra de demostración.</b> Vera Botanics es una marca ficticia: aquí no se procesan pagos ni se guardan datos.</span></p>
+          <ul class="facts">
+            <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5.5h9v7H2zM11 8h3l2 2.5v2h-5"/><circle cx="5" cy="13.5" r="1.4"/><circle cx="13.5" cy="13.5" r="1.4"/></svg><span>Envío: <span class="ph">condiciones reales pendientes</span></span></li>
+            <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 16V7"/><path d="M9 10.5C5.8 10.4 4 8.6 3.7 5.4c3.2.1 5 1.9 5.3 5.1ZM9 8.2c.2-3 1.9-4.7 4.9-5-.2 3-1.9 4.8-4.9 5Z"/></svg><span>Sin azúcar añadido. Sabor suave a jengibre y menta.</span></li>
+            <li><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.5"/><path d="M9 5.5V9l2.5 1.5"/></svg><span>Una porción al día, 30 días por frasco. Incluye cuchara de madera.</span></li>
+          </ul>
+          <details class="nutri">
+            <summary>Información nutricional <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg></summary>
+            <p class="nutri__meta">Tamaño de porción: 1 cucharada rasa (10 g). Porciones por envase: 30. Valores ilustrativos del concepto.</p>
+            <table>
+              <tbody>
+                <tr><th scope="row">Calorías</th><td>36 kcal</td></tr>
+                <tr><th scope="row">Proteína</th><td>9 g</td></tr>
+                <tr><th scope="row">Colágeno hidrolizado</th><td>9.500 mg</td></tr>
+                <tr><th scope="row">Cultivos probióticos</th><td>5 × 10⁹ UFC</td></tr>
+                <tr><th scope="row">Raíz de jengibre en polvo</th><td>150 mg</td></tr>
+                <tr><th scope="row">Hoja de menta en polvo</th><td>50 mg</td></tr>
+                <tr><th scope="row">Azúcares añadidos</th><td>0 g</td></tr>
+              </tbody>
+            </table>
+          </details>
+          <p class="legal">Este producto es un suplemento dietario, no es un medicamento y no suple una alimentación equilibrada.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · SISTEMA DE MARCA -->
+  <section class="board" id="marca" aria-labelledby="board-t">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow" data-reveal>Sistema de marca · concepto</p>
+        <h2 class="display h2" id="board-t" data-split>Cómo se ve <em>Vera Botanics</em>.</h2>
+        <p class="lede" data-reveal style="--d:200ms">El style board que ordena el sitio y las imágenes: wordmark, paleta, tipografías, botones y dirección de imagen.</p>
+      </header>
+      <div class="board__grid">
+        <div class="tile tile--wm" data-reveal>
+          <p class="tile__k">Wordmark</p>
+          <span class="wm wm--stack" role="img" aria-label="Vera Botanics"><span class="wm__vera" aria-hidden="true">VERA</span><span class="wm__rule" aria-hidden="true"></span><span class="wm__bot" aria-hidden="true"><i>B</i><i>O</i><i>T</i><i>A</i><i>N</i><i>I</i><i>C</i><i>S</i></span></span>
+        </div>
+        <div class="tile tile--wm2" data-reveal style="--d:120ms">
+          <p class="tile__k">Sobre salvia · versión en línea</p>
+          <span class="wm wm--stack" role="img" aria-label="Vera Botanics"><span class="wm__vera" aria-hidden="true">VERA</span><span class="wm__rule" aria-hidden="true"></span><span class="wm__bot" aria-hidden="true"><i>B</i><i>O</i><i>T</i><i>A</i><i>N</i><i>I</i><i>C</i><i>S</i></span></span>
+          <span class="wm wm--line" aria-hidden="true"><span class="wm__vera">VERA</span><span class="wm__rule" style="background:currentColor"></span><span class="wm__bot">BOTANICS</span></span>
+        </div>
+        <div class="tile tile--pal" data-reveal>
+          <p class="tile__k">Paleta</p>
+          <ul class="swatches">
+            <li class="swatch swatch--crema"><b>Crema</b><span>#F3EEE4 · fondo</span></li>
+            <li class="swatch swatch--lino"><b>Lino</b><span>#E9E2D5 · superficies</span></li>
+            <li class="swatch swatch--salvia"><b>Salvia</b><span>#8E9E83 · marca</span></li>
+            <li class="swatch swatch--terra"><b>Terracota suave</b><span>#C98B6C · acento</span></li>
+            <li class="swatch swatch--bronce"><b>Bronce apagado</b><span>#8A7152 · detalles</span></li>
+            <li class="swatch swatch--tinta"><b>Tinta</b><span>#262C25 · texto</span></li>
+          </ul>
+        </div>
+        <div class="tile tile--type" data-reveal>
+          <p class="tile__k">Tipografías</p>
+          <div class="spec-row"><span class="spec-aa" aria-hidden="true">Aa</span><div><p class="spec-name">Ibarra Real Nova</p><p class="spec-use">Titulares y wordmark. Regular e itálica.</p><p class="spec-sample">La mañana empieza con un gesto.</p></div></div>
+          <div class="spec-row"><span class="spec-aa spec-aa--sans" aria-hidden="true">Aa</span><div><p class="spec-name">Albert Sans</p><p class="spec-use">Lectura, etiquetas y datos. 300 a 600.</p><p class="spec-use">Una cucharada rasa (10 g) en 250 ml de agua.</p></div></div>
+        </div>
+        <div class="tile tile--btn" data-reveal style="--d:120ms">
+          <p class="tile__k">Botones</p>
+          <div class="btn-row">
+            <a class="btn" href="#comprar">Empieza tu ritual</a>
+            <a class="btn btn--ghost" href="#preguntas">Preguntas</a>
+            <a class="textlink" href="#producto">Conocer el producto</a>
+          </div>
+          <p class="spec-use">La acción principal siempre en terracota y con la misma frase. Formas de píldora solo para botones; las superficies casi no llevan radio.</p>
+        </div>
+        <div class="tile tile--img" data-reveal>
+          <p class="tile__k">Dirección de imagen</p>
+          <div class="dir">
+            <figure><canvas width="480" height="360" data-frame="k0" aria-hidden="true"></canvas><figcaption><b>Luz de ventana</b>Lateral, cálida y baja, de 3600 a 4800 K. Nunca flash.</figcaption></figure>
+            <figure><canvas width="480" height="360" data-frame="k2" aria-hidden="true"></canvas><figcaption><b>Materiales táctiles</b>Cerámica mate, roble claro, lino, travertino y vidrio.</figcaption></figure>
+            <figure><canvas width="480" height="360" data-frame="k3" aria-hidden="true"></canvas><figcaption><b>Una sola cosa en foco</b>Profundidad corta y mucho aire alrededor.</figcaption></figure>
+            <figure><canvas width="480" height="360" data-frame="k6" aria-hidden="true"></canvas><figcaption><b>Sin texto en escena</b>Ni etiquetas ni logos dentro de la imagen.</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <span class="wm wm--stack" role="img" aria-label="Vera Botanics"><span class="wm__vera" aria-hidden="true">VERA</span><span class="wm__rule" aria-hidden="true"></span><span class="wm__bot" aria-hidden="true"><i>B</i><i>O</i><i>T</i><i>A</i><i>N</i><i>I</i><i>C</i><i>S</i></span></span>
+        <p class="foot__intro">Colágeno con probióticos, jengibre y menta. Un concepto de marca ficticio creado para esta demostración.</p>
+      </div>
+      <div>
+        <h3>Atención</h3>
+        <ul>
+          <li>Correo: <span class="ph">pendiente</span></li>
+          <li>WhatsApp: <span class="ph">pendiente</span></li>
+          <li>Horario: <span class="ph">pendiente</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Empresa</h3>
+        <ul>
+          <li>Razón social: <span class="ph">pendiente</span></li>
+          <li>NIT: <span class="ph">pendiente</span></li>
+          <li>Registro sanitario INVIMA: <span class="ph">pendiente</span></li>
+          <li>Dirección: <span class="ph">pendiente</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Políticas</h3>
+        <ul>
+          <li>Envíos: <span class="ph">pendiente</span></li>
+          <li>Cambios y devoluciones: <span class="ph">pendiente</span></li>
+          <li>Tratamiento de datos: <span class="ph">pendiente</span></li>
+          <li><a href="#recorrido">Ver el recorrido otra vez</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <p>Este producto es un suplemento dietario, no es un medicamento y no suple una alimentación equilibrada.</p>
+      <p>© 2026 Vera Botanics · Concepto de marca ficticio. La compra es una demostración: no se cobra ni se envía nada. Imágenes y video generados con IA.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="application/json" id="journey-cfg">{{CFG}}</script>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var RM = root.classList.contains('rm');
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
+  function clamp(v, a, b) { if (a === undefined) a = 0; if (b === undefined) b = 1; return v < a ? a : v > b ? b : v; }
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function smooth(e0, e1, x) { var t = clamp((x - e0) / (e1 - e0)); return t * t * (3 - 2 * t); }
+  function easeSine(t) { return -(Math.cos(Math.PI * t) - 1) / 2; }
+  function setStyle(el, prop, val) { if (!el) return; var k = '__' + prop; if (el[k] !== val) { el[k] = val; el.style[prop] = val; } }
+  function scrollTopNow() { return window.scrollY || window.pageYOffset || 0; }
+  function docTop(el) { return el.getBoundingClientRect().top + scrollTopNow(); }
+  function settle(cur, target, k) { var v = RM ? target : lerp(cur, target, k); return Math.abs(v - target) < 1e-4 ? target : v; }
+
+  var CFG = JSON.parse($('#journey-cfg').textContent);
+  var probe = document.createElement('div');
+  probe.style.cssText = 'position:fixed;top:0;left:0;width:0;height:100vh;visibility:hidden;pointer-events:none';
+  document.body.appendChild(probe);
+  var VH = probe.offsetHeight || window.innerHeight, VW = window.innerWidth;
+  var PHONE = window.matchMedia('(max-width: 760px)').matches;
+  var conn = navigator.connection || {};
+  var MODE = (RM || conn.saveData || (navigator.deviceMemory && navigator.deviceMemory <= 2)) ? 'stills' : 'film';
+  var STEP = PHONE ? 2 : 1;
+  var CAP = PHONE ? 18 : 44;
+
+  // ---------- frame store: base64 WebP -> ImageBitmap, decoded on demand, LRU-evicted ----------
+  var F = { list: [], mime: 'image/webp', n: 0, cache: new Map(), inflight: new Map(), lru: [], want: 0, times: [], seen: new Set() };
+  var dirty = true;
+  function snap(i) { return Math.max(0, Math.min(F.n - 1, Math.round(i / STEP) * STEP)); }
+  function bytesOf(i) { var s = atob(F.list[i]), n = s.length, u = new Uint8Array(n); for (var k = 0; k < n; k++) u[k] = s.charCodeAt(k); return u; }
+  function imgFromBlob(blob) {
+    return new Promise(function (res, rej) {
+      var im = new Image(), url = URL.createObjectURL(blob);
+      im.onload = function () { (im.decode ? im.decode() : Promise.resolve()).then(function () { res(im); }, function () { res(im); }); };
+      im.onerror = rej; im.src = url;
+    });
+  }
+  function touch(i) { var k = F.lru.indexOf(i); if (k >= 0) F.lru.splice(k, 1); F.lru.push(i); }
+  function pinned(i) { return Math.abs(i - F.want) <= (PHONE ? 8 : 18) || (MODE === 'stills' && CFG.stills.indexOf(i) >= 0) || i === 0; }
+  function evict() {
+    var k = 0;
+    while (F.cache.size > CAP && k < F.lru.length) {
+      var i = F.lru[k];
+      if (pinned(i)) { k++; continue; }
+      F.lru.splice(k, 1);
+      var b = F.cache.get(i); F.cache.delete(i);
+      if (b && b.close) b.close();
+    }
+  }
+  var listeners = [];
+  function decode(i) {
+    if (i < 0 || i >= F.n || F.cache.has(i) || F.inflight.has(i)) return;
+    var t0 = performance.now(), p;
+    try {
+      var blob = new Blob([bytesOf(i)], { type: F.mime });
+      p = window.createImageBitmap ? createImageBitmap(blob) : imgFromBlob(blob);
+    } catch (e) { return; }
+    F.inflight.set(i, p);
+    p.then(function (bmp) {
+      F.inflight.delete(i); F.cache.set(i, bmp); F.seen.add(i); touch(i); evict();
+      if (F.times.length < 12) F.times.push(performance.now() - t0);
+      dirty = true;
+      listeners.forEach(function (fn) { fn(i); });
+      kick();
+    }, function () { F.inflight.delete(i); });
+  }
+  function nearest(i) {
+    if (F.cache.has(i)) return F.cache.get(i);
+    for (var d = STEP; d < 90; d += STEP) {
+      if (F.cache.has(i - d)) return F.cache.get(i - d);
+      if (F.cache.has(i + d)) return F.cache.get(i + d);
+    }
+    return null;
+  }
+  function prefetch(t, dir) {
+    var budget = PHONE ? 3 : 5, ahead = PHONE ? 8 : 16, behind = PHONE ? 3 : 5, d = dir < 0 ? -1 : 1, list = [snap(t)];
+    for (var a = 1; a <= ahead; a++) list.push(snap(t + a * STEP * d));
+    for (var b = 1; b <= behind; b++) list.push(snap(t - b * STEP * d));
+    for (var k = 0; k < list.length && F.inflight.size < budget; k++) decode(list[k]);
+  }
+
+  // ---------- canvas ----------
+  var stage = $('#stage'), cv = $('#film'), ctx = cv.getContext('2d', { alpha: false }), poster = $('#poster');
+  var CW = 0, CH = 0, lastKey = '', firstDrawn = false;
+  function sizeCanvas() {
+    var dpr = Math.min(window.devicePixelRatio || 1, PHONE ? 2 : 1.5);
+    var w = Math.round(stage.clientWidth * dpr), h = Math.round(stage.clientHeight * dpr);
+    if (w > 2400) { h = Math.round(h * 2400 / w); w = 2400; }
+    if (w !== CW || h !== CH) { CW = cv.width = w; CH = cv.height = h; dirty = true; }
+  }
+  function drawCover(img, fx) {
+    var iw = img.width, ih = img.height, ca = CW / CH, ia = iw / ih, sx = 0, sy = 0, sw = iw, sh = ih;
+    if (ca > ia) { sh = iw / ca; sy = (ih - sh) / 2; } else { sw = ih * ca; sx = (iw - sw) * fx; }
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, CW, CH);
+  }
+  function focusAt(fi) {
+    if (!PHONE) return 0.5;
+    var b = CFG.bounds, f = CFG.focus;
+    for (var c = 0; c < b.length - 1; c++) if (fi <= b[c + 1]) return lerp(f[c], f[c + 1], clamp((fi - b[c]) / Math.max(1, b[c + 1] - b[c])));
+    return f[f.length - 1];
+  }
+  function render(fi) {
+    if (!F.n || !CW) return;
+    var a = snap(Math.floor(fi / STEP) * STEP), b = snap(a + STEP), f = STEP ? clamp((fi - a) / STEP) : 0;
+    var A = F.cache.get(a) || nearest(a);
+    if (!A) return;
+    var fx = focusAt(fi), key = a + ':' + f.toFixed(3) + ':' + fx.toFixed(3) + ':' + CW;
+    if (!dirty && key === lastKey) return;
+    ctx.globalAlpha = 1; drawCover(A, fx);
+    var B = F.cache.get(b);
+    if (B && b !== a && f > 0.02) { ctx.globalAlpha = f; drawCover(B, fx); ctx.globalAlpha = 1; }
+    lastKey = key; dirty = false;
+    if (!firstDrawn) { firstDrawn = true; cv.classList.add('is-on'); poster.classList.add('is-gone'); }
+  }
+  function renderStills(c, u) {
+    var S = CFG.stills, A = F.cache.get(S[c]) || nearest(S[c]), B = F.cache.get(S[c + 1]);
+    if (!A) return;
+    var t = smooth(0.35, 0.85, u), key = 's' + c + ':' + t.toFixed(3) + ':' + CW;
+    if (!dirty && key === lastKey) return;
+    var fxA = focusAt(S[c]), fxB = focusAt(S[c + 1]);
+    ctx.globalAlpha = 1; drawCover(A, fxA);
+    if (B && t > 0.01) { ctx.globalAlpha = t; drawCover(B, fxB); ctx.globalAlpha = 1; }
+    lastKey = key; dirty = false;
+    if (!firstDrawn) { firstDrawn = true; cv.classList.add('is-on'); poster.classList.add('is-gone'); }
+  }
+
+  // ---------- storyboard light study, used only when no frames are embedded ----------
+  var BOARD = {
+    bg: [[243, 236, 224], [236, 228, 214], [228, 232, 224], [222, 230, 214], [241, 231, 216], [246, 240, 229], [243, 237, 226]],
+    glow: [[0.14, 0.22, 0.95], [0.3, 0.3, 0.8], [0.5, 0.4, 0.7], [0.66, 0.34, 0.75], [0.24, 0.3, 0.9], [0.5, 0.22, 1.05], [0.5, 0.2, 1.1]],
+    seeds: null, last: ''
+  };
+  function mixA(a, b, t) { return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)]; }
+  function renderBoard(s, c, u) {
+    var t = easeSine(u), key = s.toFixed(4) + ':' + CW;
+    if (!dirty && key === BOARD.last) return;
+    var bg = mixA(BOARD.bg[c], BOARD.bg[c + 1], t), g = mixA(BOARD.glow[c], BOARD.glow[c + 1], t);
+    var W = CW, H = CH, dark = root.getAttribute('data-theme') === 'dark' || (root.getAttribute('data-theme') !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (dark) bg = [bg[0] * 0.2, bg[1] * 0.22, bg[2] * 0.2];
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = 'rgb(' + bg.map(Math.round).join(',') + ')';
+    ctx.fillRect(0, 0, W, H);
+    var gx = g[0] * W, gy = g[1] * H, gr = g[2] * Math.max(W, H);
+    var rg = ctx.createRadialGradient(gx, gy, 0, gx, gy, gr);
+    rg.addColorStop(0, dark ? 'rgba(255,214,170,0.22)' : 'rgba(255,246,228,0.95)');
+    rg.addColorStop(0.45, dark ? 'rgba(255,200,150,0.08)' : 'rgba(255,238,214,0.35)');
+    rg.addColorStop(1, 'rgba(255,238,214,0)');
+    ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+    // window-frame shadows sliding past as the viewpoint moves
+    ctx.save();
+    ctx.translate(W * 0.5, H * 0.5); ctx.rotate(-0.32); ctx.translate(-W * 0.5, -H * 0.5);
+    for (var k = 0; k < 4; k++) {
+      var x = ((k * 0.31 + s * 0.23) % 1.3 - 0.15) * W * 1.4;
+      ctx.fillStyle = dark ? 'rgba(0,0,0,0.18)' : 'rgba(80,70,50,0.05)';
+      ctx.fillRect(x, -H, W * 0.035, H * 3);
+    }
+    ctx.restore();
+    // the counter line: travertine horizon
+    var hy = H * (0.7 - 0.08 * Math.sin(Math.min(1, s / 6) * Math.PI));
+    var lg = ctx.createLinearGradient(0, hy, 0, H);
+    lg.addColorStop(0, dark ? 'rgba(60,56,48,0.35)' : 'rgba(214,202,182,0.55)');
+    lg.addColorStop(1, dark ? 'rgba(40,38,32,0.6)' : 'rgba(200,188,166,0.75)');
+    ctx.fillStyle = lg; ctx.fillRect(0, hy, W, H - hy);
+    // the dissolve: a slow spiral of particles, strongest in chapter 3
+    var sw = smooth(1.6, 2.4, c + u) * (1 - smooth(3.2, 3.8, c + u));
+    if (sw > 0.01) {
+      if (!BOARD.seeds) { BOARD.seeds = []; var r = 7; for (var i = 0; i < 220; i++) { r = (r * 16807) % 2147483647; BOARD.seeds.push(r / 2147483647); } }
+      var cx = W * 0.5, cy = H * 0.46, R = Math.min(W, H) * 0.22, rot = (s - 2) * 2.4;
+      for (var p = 0; p < 110; p++) {
+        var a0 = BOARD.seeds[p] * Math.PI * 2, rr = Math.sqrt(BOARD.seeds[p + 110]) * R * (0.4 + 0.6 * t);
+        var ang = a0 + rot * (1.3 - rr / R);
+        var px = cx + Math.cos(ang) * rr, py = cy + Math.sin(ang) * rr * 0.62 + (1 - t) * -R * 0.5 * BOARD.seeds[p];
+        ctx.globalAlpha = sw * (0.45 + 0.55 * BOARD.seeds[(p + 37) % 220]);
+        ctx.fillStyle = dark ? '#E8DFCC' : '#FFFFFF';
+        ctx.beginPath(); ctx.arc(px, py, (2 + 4.5 * BOARD.seeds[(p + 71) % 220]) * (CW / 1400), 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    BOARD.last = key; dirty = false;
+    if (!firstDrawn) { firstDrawn = true; cv.classList.add('is-on'); poster.classList.add('is-gone'); }
+    var cap = document.getElementById('jcap');
+    if (cap && cap.__c !== c) { cap.__c = c; cap.textContent = (CFG.board && CFG.board[c]) || ''; }
+  }
+
+  // ---------- journey: chapters on their own scroll intervals ----------
+  var J = {
+    el: $('#recorrido'), chs: $$('.ch'), scrimL: $('#scrimL'), scrimR: $('#scrimR'),
+    rail: $$('#jrail button'), railFill: $$('#jrail button i'), bar: $$('#jbar i'),
+    top: 0, starts: [], total: 0, s: 0, cur: 0, prev: 0, active: -1, live: [],
+    measure: function () {
+      var acc = 0;
+      this.starts = CFG.chapters.map(function (c) { var s = acc; acc += c.len; return s; });
+      this.total = acc;
+      this.el.style.height = Math.round((acc + 1) * VH) + 'px';
+      this.top = docTop(this.el);
+    },
+    at: function (s) { for (var c = this.starts.length - 1; c >= 0; c--) if (s >= this.starts[c]) return c; return 0; },
+    update: function (y, k) {
+      this.s = clamp((y - this.top) / VH, 0, this.total);
+      this.cur = settle(this.cur, this.s, k);
+      var s = this.cur, c = Math.min(this.at(s), CFG.chapters.length - 1), ch = CFG.chapters[c];
+      var u = clamp((s - this.starts[c]) / ch.len), v = u;
+      if (ch.hold0) v = clamp((u - ch.hold0) / (1 - ch.hold0));
+      if (ch.hold1) v = clamp(u / (1 - ch.hold1));
+      var fi = CFG.bounds[c] + (CFG.bounds[c + 1] - CFG.bounds[c]) * easeSine(v);
+      var inView = y < this.top + this.el.offsetHeight;
+      if (inView && F.n) {
+        F.want = Math.round(fi);
+        if (MODE === 'film') { prefetch(fi, this.s - this.prev); render(fi); }
+        else { decode(CFG.stills[c]); decode(CFG.stills[c + 1]); renderStills(c, u); }
+      } else if (inView && MODE === 'board') {
+        renderBoard(s, c, u);
+      }
+      this.prev = this.s;
+      // chapter copy: enter, hold, leave
+      var wl = 0, wr = 0;
+      for (var i = 0; i < this.chs.length; i++) {
+        var ui = (s - this.starts[i]) / CFG.chapters[i].len, a;
+        if (i === 0) a = 1 - smooth(0.3, 0.46, ui);
+        else if (i === this.chs.length - 1) a = smooth(0.4, 0.6, ui);
+        else a = smooth(0.04, 0.2, ui) * (1 - smooth(0.8, 0.96, ui));
+        if (ui < -0.2 || (ui > 1.2 && i !== this.chs.length - 1)) a = 0;
+        var el = this.chs[i];
+        setStyle(el, 'opacity', a.toFixed(3));
+        if (!RM) setStyle(el, 'transform', 'translate3d(0,' + ((ui < 0.5 ? 1 : -1) * (1 - a) * 22).toFixed(2) + 'px,0)');
+        var live = a > 0.5;
+        if (live !== this.live[i]) { this.live[i] = live; el.classList.toggle('is-live', live); }
+        if (el.classList.contains('ch--r')) wr += a; else wl += a;
+      }
+      setStyle(this.scrimL, 'opacity', clamp(wl).toFixed(3));
+      setStyle(this.scrimR, 'opacity', clamp(wr).toFixed(3));
+      if (c !== this.active) {
+        if (this.rail[this.active]) this.rail[this.active].classList.remove('is-on');
+        if (this.rail[c]) this.rail[c].classList.add('is-on');
+        this.active = c;
+      }
+      for (var r = 0; r < this.rail.length; r++) {
+        var fill = clamp((s - this.starts[r]) / CFG.chapters[r].len).toFixed(3);
+        setStyle(this.railFill[r], 'transform', 'scaleX(' + fill + ')');
+        setStyle(this.bar[r], 'transform', 'scaleX(' + fill + ')');
+      }
+      return this.cur !== this.s || F.inflight.size > 0;
+    },
+    go: function (i) {
+      var off = i === 0 ? 0 : CFG.chapters[i].len * 0.3;
+      window.scrollTo({ top: Math.round(this.top + (this.starts[i] + off) * VH), behavior: RM ? 'auto' : 'smooth' });
+    }
+  };
+  J.rail.forEach(function (b) { b.addEventListener('click', function () { J.go(+b.getAttribute('data-go')); }); });
+  J.chs.forEach(function (el, i) { el.addEventListener('focusin', function () { if (!J.live[i]) J.go(i); }); });
+
+  // ---------- loader: first chapter decoded before the camera moves ----------
+  var loader = { el: $('#loader'), txt: $('#loaderTxt'), bar: $('#loaderBar'), need: [], done: false };
+  // warm the opening move while the first composition holds, a few decodes at a time
+  function loaderStart() {
+    var end = MODE === 'film' ? Math.min(CFG.bounds[1], (PHONE ? 14 : 28) * STEP) : 0;
+    for (var i = 0; i <= end; i += STEP) loader.need.push(snap(i));
+    if (MODE === 'stills') loader.need = CFG.stills.slice(0, 2);
+    warm();
+    setTimeout(loaderFinish, 8000);
+  }
+  function warm() {
+    for (var k = 0; k < loader.need.length && F.inflight.size < (PHONE ? 2 : 4); k++) {
+      var i = loader.need[k];
+      if (!F.seen.has(i) && !F.inflight.has(i)) decode(i);
+    }
+  }
+  function loaderTick() {
+    if (loader.done) return;
+    warm();
+    var have = loader.need.filter(function (i) { return F.seen.has(i); }).length, p = have / Math.max(1, loader.need.length);
+    setStyle(loader.bar, 'transform', 'scaleX(' + p.toFixed(3) + ')');
+    loader.txt.textContent = 'Preparando el recorrido · ' + Math.round(p * 100) + ' %';
+    if (p >= 1) loaderFinish();
+  }
+  function loaderFinish() {
+    if (loader.done) return;
+    loader.done = true; loader.el.classList.add('is-done');
+    loader.txt.textContent = 'Recorrido listo';
+    // phones that decode slowly get representative stills instead of the film
+    if (PHONE && MODE === 'film' && F.times.length >= 6) {
+      var t = F.times.slice().sort(function (a, b) { return a - b; })[Math.floor(F.times.length / 2)];
+      if (t > 90) { MODE = 'stills'; dirty = true; kick(); }
+    }
+  }
+  listeners.push(function () { loaderTick(); });
+
+  // ---------- reveals ----------
+  function splitWords(el) {
+    var idx = 0;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (k) {
+        if (k.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          k.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            var o = document.createElement('span'); o.className = 'sw';
+            var inner = document.createElement('span'); inner.textContent = part; inner.style.setProperty('--i', idx++);
+            o.appendChild(inner); frag.appendChild(o);
+          });
+          node.replaceChild(frag, k);
+        } else if (k.nodeType === 1) walk(k);
+      });
+    })(el);
+  }
+  var reveals = [], armed = false;
+  if (!RM) $$('[data-split]').forEach(splitWords);
+  reveals = $$('[data-reveal],[data-split]').map(function (el) { return { el: el, top: 0, done: false }; });
+  function measureReveals() { reveals.forEach(function (r) { if (!r.done) r.top = docTop(r.el); }); }
+  function updateReveals(y) {
+    if (!armed) return;
+    var line = y + VH * 0.9;
+    reveals.forEach(function (r) { if (!r.done && r.top < line) { r.done = true; r.el.classList.add('is-in'); } });
+  }
+
+  // ---------- nav, ingredient parallax, timeline ----------
+  var nav = { el: $('#nav'), solid: null, update: function (y) { var s = y > J.top + J.el.offsetHeight - VH * 1.02; if (s !== this.solid) { this.solid = s; this.el.classList.toggle('is-solid', s); } return false; } };
+  var ing = {
+    imgs: $$('.ing__img img'), boxes: [],
+    measure: function () { this.boxes = this.imgs.map(function (im) { var b = im.parentNode; return { top: docTop(b), h: b.offsetHeight }; }); },
+    update: function (y) {
+      if (RM) return false;
+      for (var i = 0; i < this.imgs.length; i++) {
+        var b = this.boxes[i]; if (!b) continue;
+        var q = (b.top + b.h / 2 - (y + VH / 2)) / VH;
+        if (q < -1.3 || q > 1.3) continue;
+        setStyle(this.imgs[i], 'transform', 'translate3d(0,' + (clamp(q, -1.2, 1.2) * -4.5).toFixed(3) + '%,0)');
+      }
+      return false;
+    }
+  };
+  var routine = {
+    wrap: $('#stepsWrap'), fill: $('#stepsFill'), steps: $$('#stepsWrap .step'), top: 0, h: 1, marks: [], cur: 0, on: [],
+    measure: function () { var self = this; this.top = docTop(this.wrap) + 12; this.h = Math.max(1, this.wrap.offsetHeight - 24); this.marks = this.steps.map(function (s) { return docTop(s) - self.top + 8; }); },
+    update: function (y, k) {
+      var p = clamp((y + VH * 0.62 - this.top) / this.h);
+      this.cur = settle(this.cur, p, k);
+      setStyle(this.fill, 'transform', 'scaleY(' + this.cur.toFixed(4) + ')');
+      var px = this.cur * this.h;
+      for (var i = 0; i < this.steps.length; i++) { var on = px >= this.marks[i]; if (on !== this.on[i]) { this.on[i] = on; this.steps[i].classList.toggle('is-on', on); } }
+      return this.cur !== p;
+    }
+  };
+
+  // ---------- loop (runs only while something moves) ----------
+  var state = { lastT: 0 }, running = false, idle = 0;
+  function tick(now) {
+    var y = scrollTopNow(), dt = state.lastT ? Math.min(64, Math.max(1, now - state.lastT)) : 16.7;
+    state.lastT = now;
+    var k = 1 - Math.pow(1 - 0.16, dt / 16.67), busy = false;
+    if (J.update(y, k)) busy = true;
+    nav.update(y); ing.update(y);
+    if (routine.update(y, k)) busy = true;
+    updateReveals(y);
+    if (dirty) busy = true;
+    idle = busy ? 0 : idle + 1;
+    if (idle > 30) { running = false; state.lastT = 0; return; }
+    requestAnimationFrame(tick);
+  }
+  function kick() { if (!running) { running = true; idle = 0; requestAnimationFrame(tick); } }
+  window.addEventListener('scroll', kick, { passive: true });
+
+  function measureAll() {
+    VH = probe.offsetHeight || window.innerHeight; VW = window.innerWidth;
+    J.measure(); ing.measure(); routine.measure(); measureReveals(); sizeCanvas(); kick();
+  }
+  var rT;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth === VW && Math.abs((probe.offsetHeight || window.innerHeight) - VH) < 1) { sizeCanvas(); return; }
+    clearTimeout(rT); rT = setTimeout(measureAll, 140);
+  });
+  if ('ResizeObserver' in window) {
+    var lastH = 0;
+    new ResizeObserver(function () { var h = document.body.offsetHeight; if (h === lastH) return; lastH = h; clearTimeout(rT); rT = setTimeout(measureAll, 90); }).observe(document.body);
+  }
+
+  // ---------- purchase (demo) ----------
+  var PRICES = { once: 189000, sub: 160650 };
+  var form = $('#buy'), qty = $('#qty'), toastEl = $('#toast'), toastT;
+  function fmt(n) { return '$' + n.toLocaleString('es-CO'); }
+  function plan() { var c = $('input[name="plan"]:checked', form); return c ? c.value : 'once'; }
+  function qtyVal() { var q = parseInt(qty.value, 10); return isNaN(q) ? 1 : Math.max(1, Math.min(6, q)); }
+  function renderBuy() {
+    var unit = PRICES[plan()], q = qtyVal();
+    $('#price').textContent = fmt(unit);
+    $('#total').textContent = fmt(unit * q);
+    $$('.plan', form).forEach(function (l) { l.classList.toggle('is-checked', $('input', l).checked); });
+  }
+  function toast(msg) {
+    clearTimeout(toastT);
+    toastEl.textContent = msg; toastEl.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { toastEl.classList.add('is-on'); }); });
+    toastT = setTimeout(function () { toastEl.classList.remove('is-on'); toastT = setTimeout(function () { toastEl.hidden = true; }, 500); }, 4600);
+  }
+  form.addEventListener('change', renderBuy);
+  qty.addEventListener('input', function () { qty.value = qty.value.replace(/\D/g, '').slice(0, 1); renderBuy(); });
+  qty.addEventListener('blur', function () { qty.value = qtyVal(); renderBuy(); });
+  $('#qty-minus').addEventListener('click', function () { qty.value = Math.max(1, qtyVal() - 1); renderBuy(); });
+  $('#qty-plus').addEventListener('click', function () { qty.value = Math.min(6, qtyVal() + 1); renderBuy(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var q = qtyVal(), label = plan() === 'sub' ? 'cada 30 días' : 'compra única';
+    toast('Demo: ' + q + (q > 1 ? ' frascos' : ' frasco') + ', ' + label + ', ' + fmt(PRICES[plan()] * q) + '. Aquí terminaría la compra; como es una marca ficticia, no se cobra nada.');
+  });
+
+  function paintPending(c, label) {
+    var x = c.getContext('2d'), w = c.width, h = c.height, cs = getComputedStyle(root);
+    var g = x.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, cs.getPropertyValue('--bg').trim() || '#F3EEE4');
+    g.addColorStop(1, cs.getPropertyValue('--bg-2').trim() || '#E9E2D5');
+    x.fillStyle = g; x.fillRect(0, 0, w, h);
+    x.strokeStyle = cs.getPropertyValue('--bronze').trim() || '#8A7152'; x.globalAlpha = 0.5; x.lineWidth = Math.max(1, w / 400);
+    x.strokeRect(w * 0.06, h * 0.06, w * 0.88, h * 0.88); x.globalAlpha = 1;
+    x.fillStyle = cs.getPropertyValue('--ink').trim() || '#262C25'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.font = 'italic ' + Math.round(w / 16) + 'px "Ibarra Real Nova", Georgia, serif';
+    x.fillText(label, w / 2, h / 2 - w / 40);
+    x.fillStyle = cs.getPropertyValue('--bronze-ink').trim() || '#6E5A40';
+    x.font = '600 ' + Math.round(w / 40) + 'px "Albert Sans", system-ui, sans-serif';
+    x.fillText('PENDIENTE DE DESCARGA', w / 2, h / 2 + w / 22);
+  }
+
+  // ---------- stills drawn from the sequence (purchase + style board) ----------
+  var paint = [];
+  function paintFrames() {
+    var map = CFG.named || {};
+    $$('canvas[data-frame]').forEach(function (c) { var i = map[c.getAttribute('data-frame')]; if (i !== undefined) paint.push({ c: c, i: snap(i), done: false }); });
+    var b = $('#buyFrame'); if (b && map.buy !== undefined) paint.push({ c: b, i: snap(map.buy), done: false });
+  }
+  function paintTick() {
+    paint.forEach(function (p) {
+      if (p.done) return;
+      var img = F.cache.get(p.i);
+      if (!img) { if (p.near) decode(p.i); return; }
+      var cx = p.c.getContext('2d'), cw = p.c.width, ch = p.c.height, iw = img.width, ih = img.height, ca = cw / ch, ia = iw / ih, sx = 0, sy = 0, sw = iw, sh = ih;
+      if (ca > ia) { sh = iw / ca; sy = (ih - sh) / 2; } else { sw = ih * ca; sx = (iw - sw) * (p.c.id === 'buyFrame' ? CFG.buyFocus || 0.5 : 0.5); }
+      cx.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+      p.done = true;
+    });
+  }
+  listeners.push(paintTick);
+  function paintNear(y) {
+    paint.forEach(function (p) {
+      if (p.done || p.near) return;
+      var t = docTop(p.c);
+      if (t < y + VH * 2.2) { p.near = true; decode(p.i); }
+    });
+  }
+  window.addEventListener('scroll', function () { paintNear(scrollTopNow()); }, { passive: true });
+
+  // ---------- boot ----------
+  measureAll();
+  setTimeout(function () { armed = true; kick(); }, 140);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureAll);
+  window.addEventListener('load', measureAll);
+
+  window.VERA = {
+    ready: false,
+    get mode() { return MODE; },
+    F: F, J: J, CFG: CFG,
+    frames: function () {
+      var el = document.getElementById('frames');
+      if (!el || !el.textContent.trim()) {
+        // no embedded frames: storyboard light study, labelled as provisional
+        MODE = 'board'; root.classList.add('is-board');
+        loader.done = true; loader.el.classList.add('is-done');
+        $$('canvas[data-frame], #buyFrame').forEach(function (c) { paintPending(c, c.id === 'buyFrame' ? 'Imagen del producto' : 'Referencia de imagen'); });
+        measureAll(); dirty = true; kick();
+        window.VERA.ready = true;
+        return;
+      }
+      F.list = el.textContent.trim().split(/\s+/);
+      F.mime = el.getAttribute('data-mime') || 'image/webp';
+      F.n = F.list.length;
+      el.textContent = '';
+      loaderStart();
+      paintFrames();
+      paintNear(scrollTopNow());
+      measureAll();
+      window.VERA.ready = true;
+    }
+  };
+})();
+</script>
+<!--FRAMES-->
+<script>window.VERA && window.VERA.frames();</script>
